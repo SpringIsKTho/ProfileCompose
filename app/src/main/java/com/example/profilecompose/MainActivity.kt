@@ -35,7 +35,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            Scaffold(
+            NavigationWrapper()
+            /*Scaffold(
                 modifier = Modifier.padding(14.dp)
                     .background(Color(R.color.background)),
                 topBar = {
@@ -44,7 +45,7 @@ class MainActivity : ComponentActivity() {
                 content = {
                     app()
                 }
-            )
+            )*/
         }
     }
 }
