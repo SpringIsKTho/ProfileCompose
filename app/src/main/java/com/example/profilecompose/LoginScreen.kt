@@ -19,7 +19,7 @@ import androidx.navigation.NavController
 import org.w3c.dom.Text
 
 @Composable
-fun LoginScreen(navigateToProfile: (String) -> Unit){
+fun LoginScreen(navigateToCheckAccess: (user: String, passwd: String) -> Unit){
     var error by remember {mutableStateOf(false)}
     var user by remember {mutableStateOf("")}
     var passwd by remember { mutableStateOf("")}
@@ -34,12 +34,7 @@ fun LoginScreen(navigateToProfile: (String) -> Unit){
         TextField(value = passwd, onValueChange = {passwd = it}, placeholder = {Text("contraseña")})
 
         Button(onClick = {
-            if (user == "admin" && passwd == "1234") {
-                navigateToProfile(user)
-            }
-            else{
-                error = true;
-            }
+            navigateToCheckAccess(user, passwd)
         }) {
             Text("Login")
         }

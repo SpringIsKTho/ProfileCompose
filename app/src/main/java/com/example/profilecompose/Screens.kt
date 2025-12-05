@@ -11,3 +11,7 @@ data class Profile(val name: String)
 object Search
 @Serializable
 data class Detail(val name: String)
+object NavRoutes{
+    const val LOGIN = "Login"
+    const val CHECK_ACCESS_WITH_ARGS = "check_access/{username}/{password}"
+}
